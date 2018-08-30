@@ -9,7 +9,6 @@
   "author": "Gustavo Santana Bastos",
   "license": "ISC",
   "devDependencies": {
-    "csslint-stylish": "0.0.6",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^3.9.4",
@@ -30,13 +29,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gustavosb8/SiteEmprestimos.git"
+    "url": "git+https://github.com/gustavosb8/looplabProject.git"
   },
   "keywords": [
     "Looplab"
   ],
   "bugs": {
-    "url": "https://github.com/gustavosb8/SiteEmprestimos/issues"
+    "url": "https://github.com/gustavosb8/looplabProject/issues"
   },
-  "homepage": "https://github.com/gustavosb8/SiteEmprestimos#readme"
+  "homepage": "https://github.com/gustavosb8/looplabProject#readme"
 }
