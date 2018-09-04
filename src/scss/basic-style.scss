@@ -1,0 +1,80 @@
+//colors
+$color_twilight_blue_approx: azure;
+$color_silver_sand_approx: #c2c4c4;
+$color_dove_gray_approx: dimgray;
+$color_celeste_approx: #ccc;
+$cyan_aqua: aqua;
+
+//fonts
+$font_0: sans-serif;
+$font_1: cursive;
+
+//@extend-elements
+//original selectors
+//input[type=text], [type=email], select
+%extend_1 {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid $color_celeste_approx;
+	color: #4c4c4cb0;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+
+body {
+	color: $color_twilight_blue_approx;
+	font-family: $font_0, $font_1;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	float: left;
+	a {
+		display: block;
+		color: $color_silver_sand_approx;
+		text-align: center;
+		padding: 16px;
+		text-decoration: none;
+		&:hover {
+			color: $color_dove_gray_approx;
+		}
+	}
+}
+span {
+	font-weight: 600;
+}
+h1 {
+	text-align: center;
+}
+input {
+	width: 100%;
+	padding-bottom: 1.5rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	font-size: 1rem;
+	font-weight: 550;
+	border: 1px solid $color_silver_sand_approx;
+	border-radius: 5px;
+}
+input[type=text] {
+	@extend %extend_1;
+}
+[type=email] {
+	@extend %extend_1;
+}
+select {
+	@extend %extend_1;
+}
+hr {
+	grid-area: hr;
+	height: 1px;
+	background-color: $cyan_aqua;
+	margin: 0;
+	padding: 0;
+}

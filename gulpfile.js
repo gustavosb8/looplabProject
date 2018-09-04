@@ -9,8 +9,8 @@ const cssmin = require('gulp-cssmin');
 
 /*GULP-SASS*/
 
-//const sass = require('gulp-sass');
-//const rename = require("gulp-rename");
+const sass = require('gulp-sass');
+const rename = require("gulp-rename");
 
 /*sprite*/
 
@@ -27,12 +27,12 @@ const cssmin = require('gulp-cssmin');
 
 
 gulp.task('default', ['copy'], function() {
-    gulp.start('imagemin', 'merge-css', 'html-replace', 'cssmin');
-})
+    gulp.start('imagemin', 'html-replace', 'cssmin', 'sassprod', 'merge-css');
+});
 
 /*
 gulp.task('default', ['copy'], function() {
-    gulp.start('imagemin', 'merge-css', 'html-replace', 'cssmin', 'sassprod',);
+    gulp.start('imagemin', 'html-replace', 'cssmin', 'sassprod', 'merge-css');
 })
 */
 
@@ -53,13 +53,6 @@ gulp.task('imagemin',  function() {
         .pipe(gulp.dest('dist/img') );
 });
 
-gulp.task('merge-css', function() {
-     return gulp.src('dist/css/*.css')
-        .pipe(concat('site.css') )
-        .pipe(cleanCSS() )
-        .pipe(gulp.dest('dist/css/') );
- });
-
 gulp.task('html-replace', function () {
     return gulp.src('src/**/*.html')
         .pipe(htmlReplace({css: '../dist/css/site.css'}))
@@ -70,15 +63,6 @@ gulp.task('cssmin', function () {
      return gulp.src('dist/css/*.css')
                 .pipe(cssmin())
                 .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('htmlbeautify', function() {
-  var options = {
-      indentSize: 2
-  };
-   gulp.src('./src/*.html')
-    .pipe(htmlbeautify(options))
-    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('cleanscss', function() {
@@ -99,7 +83,24 @@ gulp.task('sassprod', ['cleanscss'], function() {
             suffix: ".min",
         }))
         
-        .pipe(gulp.dest('./dist/css/sassTeste/'));
+        .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('merge-css', function() {
+     return gulp.src('dist/css/*.css')
+        .pipe(concat('site.css') )
+        .pipe(cleanCSS() )
+        .pipe(gulp.dest('dist/css/') );
+ });
+
+/*
+gulp.task('htmlbeautify', function() {
+  var options = {
+      indentSize: 2
+  };
+   gulp.src('./src/*.html')
+    .pipe(htmlbeautify(options))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('inlinesource', function () {
@@ -110,9 +111,6 @@ gulp.task('inlinesource', function () {
         .pipe(inlinesource(options))
         .pipe(gulp.dest('./dist/'));
 });
-
-/*
-
 
 gulp.task('compress-js', function (cb) {
          gulp.src('dist/js/*.js')

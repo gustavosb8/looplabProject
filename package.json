@@ -18,6 +18,7 @@
     "gulp-html-replace": "^1.6.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-inline-source": "^3.1.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
