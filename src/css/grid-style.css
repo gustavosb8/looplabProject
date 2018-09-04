@@ -8,13 +8,12 @@ body {
     display: grid;
     grid-area: navbar;
     background-color: #3333339e;
-    padding-bottom: 2rem;
 }
 
 .perfil {
+    display: block;
     grid-area: perfil;
     padding: 5rem;
-    margin-left: 4rem;
 }
 
 .perfil-titulo {
@@ -38,13 +37,18 @@ body {
 }
 
 .sidebar1 {
-    width: 2em;
+    width: 7rem;
     grid-area: sidebar1;
 }
 
 .sidebar2 {
-    width: 2em;
+    width: 7rem;
     grid-area: sidebar2;
+}
+
+.div-navbar-ul{
+    margin-left: 20rem;
+    display: flex;
 }
 
 .wrapper {
@@ -104,17 +108,12 @@ body {
     display: grid;
     grid-area: img-conecte;
     grid-template-areas: 
-        "sidebar1 img-apresenta conecte-text sidebar2"
-       
+        "sidebar1 img-apresenta conecte-text sidebar2";
 }
 
 .conecte-text{
     grid-area: conecte-text;
     color:#6f6f6fad;
-    width: 90%;
-    padding-top: 6.5rem;
-    padding-bottom: 2rem;
-    /*padding-left: 3.5rem;*/
 }
 
 .crie{
@@ -128,7 +127,7 @@ body {
     display: grid;
     grid-area: experiencia;
     grid-template-areas: 
-        "sidebar1 img-apresenta text-experiencia sidebar2";
+        "sidebar1 text-experiencia img-apresenta sidebar2";
     background-color: #4e4e4ef5;
     
 }
@@ -136,10 +135,7 @@ body {
 .text-experiencia{
     grid-area: text-experiencia;
     color:#fffafa96;
-    width: 90%;
-    padding-top: 6.5rem;
-    padding-bottom: 2rem;
-    /*padding-left: 3.5rem;*/
+    padding-left: 3rem;
 }
 
 .compartilhe{
@@ -159,10 +155,12 @@ body {
 .compartilhe-text{
     grid-area: compartilhe-text;
     color:#6f6f6fad;
+}
+
+.info-text{
     width: 90%;
     padding-top: 6.5rem;
-    padding-bottom: 2rem;
-    /*padding-left: 3.5rem;*/
+    padding-bottom: 1rem;
 }
 
 .footer {
@@ -176,10 +174,40 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 0px) and (min-width: 470px) {
+@media (max-width: 600px) {
     
     .perfil {
-        display: block;
+        display: none;
+    }
+    
+    .form{
+        width: 100%;
+        margin-left: -11rem;
+    }
+    
+    .img-apresenta {
+        grid-area: img-apresenta;
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 100%;
+    }
+    
+    .info-text {
+        width: 100%;
+        padding-top: 0.1rem;
+        padding-bottom: 2rem;
+    }
+    
+    .text-experiencia {
+        padding-left: 0rem;
+    }
+    
+    .experiencia {
+        display: grid;
+        grid-area: experiencia;
+        grid-template-areas: "sidebar1 img-apresenta sidebar2" "sidebar1 text-experiencia sidebar2";
+        background-color: #4e4e4ef5;
     }
     
     .img-conecte{
@@ -190,28 +218,12 @@ body {
         "sidebar1 conecte-text sidebar2";
     }
     
-    .experiencia{
-        display: grid;
-        grid-area: experiencia;
-        grid-template-areas: 
-            "sidebar1 img-apresenta sidebar2"
-            "sidebar1 text-experiencia sidebar2";
-        background-color: #4e4e4ef5;
-    }
-    
     .img-compartilhe{
         display: grid;
         grid-area: img-compartilhe;
         grid-template-areas: 
             "sidebar1 img-apresenta sidebar2"
             "sidebar1 compartilhe-text sidebar2"
-    }
-    
+    } 
 }
 
-@media screen and (max-width: 480px) {
-    
-    .perfil {
-        display: none;
-    }   
-}
