@@ -157,12 +157,24 @@ $url_0: url(../img/home.jpg);
 .paragrafo {
 	text-align: center;
 }
+
 @media(max-width: 600px) {
+    
+    .div-navbar-ul {
+        margin-left: 4rem;
+        display: flex;
+    }
+    .navbar {
+        display: grid;
+        grid-area: navbar;
+        background-color: #3333339e;
+        font-size: 25px;
+    }
 	.perfil {
 		display: none;
 	}
 	.form {
-		width: 110%;
+		width: 135%;
 		margin-left: -11rem;
 	}
 	.img-apresenta {
@@ -177,7 +189,13 @@ $url_0: url(../img/home.jpg);
 		width: 100%;
 		padding-top: 0.1rem;
 		padding-bottom: 2rem;
+        font-size: 30px;
 	}
+    
+    .decoracao-text{
+        font-size: 2rem;
+    }
+    
 	.text-experiencia {
 		padding-left: 0;
 	}
@@ -203,4 +221,7 @@ $url_0: url(../img/home.jpg);
             "sidebar1 img-apresenta sidebar2" 
             "sidebar1 compartilhe-text sidebar2";
 	}
+    .btn{
+        font-size: 2rem;
+    }
 }
